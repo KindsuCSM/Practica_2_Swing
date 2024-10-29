@@ -13,7 +13,7 @@ public class Empleado {
         setNombre(nombre);
         setFechaNacimiento(fechaNacimiento);
         setSalario(salario);
-        setSalarioMaximo(salario);
+        setSalarioMaximo(salarioMaximo);
     }
 
     //Incrementar idEmpleado
