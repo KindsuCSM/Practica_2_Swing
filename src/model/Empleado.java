@@ -7,9 +7,9 @@ public class Empleado {
 
     // Constructor
     public Empleado(String nombre, String fechaNacimiento, double salario) {
-        this.nombre = nombre;
-        this.fechaNacimiento = fechaNacimiento;
-        this.salario = salario;
+        setNombre(nombre);
+        setFechaNacimiento(fechaNacimiento);
+        setSalario(salario);
     }
 
     // Getters y setters
