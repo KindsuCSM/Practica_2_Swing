@@ -16,11 +16,11 @@ public class CtrlEmpleado {
     }
 
     public void inicializarEmpleados() {
-        empleados.add(new Empleado("Juan Pérez", "1990-01-15", 30000));
+        /*empleados.add(new Empleado("Juan Pérez", "1990-01-15", 30000));
         empleados.add(new Empleado("María López", "1985-05-10", 32000));
         empleados.add(new Empleado("Carlos García", "1978-12-22", 28000));
         empleados.add(new Empleado("Ana Fernández", "1993-03-03", 35000));
-        empleados.add(new Empleado("Luis Sánchez", "2000-11-01", 25000));
+        empleados.add(new Empleado("Luis Sánchez", "2000-11-01", 25000));*/
     }
 
     public Empleado getEmpleadoActual() {
