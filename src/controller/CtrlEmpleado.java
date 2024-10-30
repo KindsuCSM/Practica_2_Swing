@@ -11,7 +11,6 @@ public class CtrlEmpleado {
     public CtrlEmpleado() {
         empleados = new ArrayList<>();
         indiceActual = 0;
-
         inicializarEmpleados();
     }
 
@@ -36,7 +35,6 @@ public class CtrlEmpleado {
         return empleados.get(indiceActual);
     }
 
-
     public void siguienteEmpleado() {
         if (indiceActual < empleados.size() - 1) {
             indiceActual++;
@@ -50,20 +48,12 @@ public class CtrlEmpleado {
     }
 
     public boolean esUltimoEmpleado() {
-        return indiceActual == empleados.size();
+        return indiceActual == empleados.size() - 1;
     }
 
     public boolean esPrimerEmpleado() {
         return indiceActual == 0;
     }
 
-    public void agregarEmpleado(Empleado empleado) {
-        empleados.add(empleado);
-        indiceActual = empleados.size() - 1;
-    }
-
-    public boolean hayCampoNuevo() {
-        return indiceActual == empleados.size();
-    }
 
 }

@@ -19,14 +19,6 @@ public class CtrlFramePrincipal {
         frmPrincipal.txtSalario.setText(String.valueOf(salario));
     }
 
-    public Empleado recogerEmpleado() {
-        String nombre = frmPrincipal.txtNombre.getText();
-        String fecha = frmPrincipal.txtFecha.getText();
-        Double salario = Double.parseDouble(frmPrincipal.txtSalario.getText());
-
-        return new Empleado(nombre, fecha, salario);
-    }
-
     public void mostrarPrimerEmpleado() {
         Empleado empleado = ctrlEmpleado.getPrimerEmpleado();
         setEmpleadoData(empleado.getNombre(), empleado.getFechaNacimiento(), empleado.getSalario());
@@ -41,22 +33,10 @@ public class CtrlFramePrincipal {
     }
 
     public void mostrarEmpleadoActual() {
-        if (ctrlEmpleado.esUltimoEmpleado()) {
-            setEmpleadoData("", "", 0);
-
-        } else {
-            Empleado empleado = ctrlEmpleado.getEmpleadoActual();
-            setEmpleadoData(empleado.getNombre(), empleado.getFechaNacimiento(), empleado.getSalario());
-
-        }
+        Empleado empleado = ctrlEmpleado.getEmpleadoActual();
+        setEmpleadoData(empleado.getNombre(), empleado.getFechaNacimiento(), empleado.getSalario());
 
         frmPrincipal.btnAnterior.setEnabled(!ctrlEmpleado.esPrimerEmpleado());
         frmPrincipal.btnSiguiente.setEnabled(!ctrlEmpleado.esUltimoEmpleado());
-    }
-
-    public void agregarNuevoEmpleado() {
-        Empleado nuevoEmpleado = recogerEmpleado();
-        ctrlEmpleado.agregarEmpleado(nuevoEmpleado);
-        mostrarEmpleadoActual();
     }
 }
