@@ -1,5 +1,7 @@
 package model;
 
+import java.util.GregorianCalendar;
+
 public class Empleado {
     private int idEmpleado;
     private String nombre;
@@ -14,6 +16,12 @@ public class Empleado {
         setFechaNacimiento(fechaNacimiento);
         setSalario(salario);
         setSalarioMaximo(salarioMaximo);
+    }
+
+    public Empleado(String nombre, String fechaNacimiento, double salario){
+        setNombre(nombre);
+        setFechaNacimiento(fechaNacimiento);
+        setSalario(salario);
     }
 
     //Incrementar idEmpleado
