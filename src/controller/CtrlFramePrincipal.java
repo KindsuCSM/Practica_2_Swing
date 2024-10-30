@@ -27,14 +27,27 @@ public class CtrlFramePrincipal {
         return new Empleado(nombre, fecha, salario);
     }
 
+    public void mostrarPrimerEmpleado() {
+        Empleado empleado = ctrlEmpleado.getPrimerEmpleado();
+        setEmpleadoData(empleado.getNombre(), empleado.getFechaNacimiento(), empleado.getSalario());
+        frmPrincipal.btnSiguiente.setEnabled(true);
+        frmPrincipal.btnAnterior.setEnabled(false);
+    }
+    public void mostrarUltimoEmpleado(){
+        Empleado empleado = ctrlEmpleado.getUltimoEmpleado();
+        setEmpleadoData(empleado.getNombre(), empleado.getFechaNacimiento(), empleado.getSalario());
+        frmPrincipal.btnSiguiente.setEnabled(false);
+        frmPrincipal.btnAnterior.setEnabled(true);
+    }
+
     public void mostrarEmpleadoActual() {
         if (ctrlEmpleado.esUltimoEmpleado()) {
             setEmpleadoData("", "", 0);
-            frmPrincipal.setAltaVisible(true);
+
         } else {
             Empleado empleado = ctrlEmpleado.getEmpleadoActual();
             setEmpleadoData(empleado.getNombre(), empleado.getFechaNacimiento(), empleado.getSalario());
-            frmPrincipal.setAltaVisible(false);
+
         }
 
         frmPrincipal.btnAnterior.setEnabled(!ctrlEmpleado.esPrimerEmpleado());

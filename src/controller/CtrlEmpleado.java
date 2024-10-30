@@ -27,6 +27,16 @@ public class CtrlEmpleado {
         return empleados.get(indiceActual);
     }
 
+    public Empleado getPrimerEmpleado(){
+        indiceActual = 0;
+        return empleados.get(indiceActual);
+    }
+    public Empleado getUltimoEmpleado(){
+        indiceActual = empleados.size() -1;
+        return empleados.get(indiceActual);
+    }
+
+
     public void siguienteEmpleado() {
         if (indiceActual < empleados.size() - 1) {
             indiceActual++;
@@ -40,7 +50,7 @@ public class CtrlEmpleado {
     }
 
     public boolean esUltimoEmpleado() {
-        return indiceActual == empleados.size() - 1;
+        return indiceActual == empleados.size();
     }
 
     public boolean esPrimerEmpleado() {

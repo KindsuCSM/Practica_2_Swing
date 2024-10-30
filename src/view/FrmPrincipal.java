@@ -1,5 +1,4 @@
 package view;
-import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -16,7 +15,7 @@ public class FrmPrincipal extends JFrame {
     private JPanel contentPane;
     private JLabel lblNombre, lblFecha, lblSalario;
     public JTextField txtNombre, txtFecha, txtSalario;
-    public JButton btnAnterior, btnSiguiente, btnAlta, btnCancelar;
+    public JButton btnAnterior, btnSiguiente, btnPrimero, btnUltimo;
 
     private CtrlFramePrincipal ctrlFramePrincipal;
     private CtrlEmpleado ctrlEmpleado;
@@ -52,11 +51,11 @@ public class FrmPrincipal extends JFrame {
         contentPane.add(txtSalario);
         txtSalario.setColumns(10);
 
-        btnAlta = new JButton("Alta");
-        contentPane.add(btnAlta);
+        btnPrimero = new JButton("Primero");
+        contentPane.add(btnPrimero);
 
-        btnCancelar = new JButton("Cancelar");
-        contentPane.add(btnCancelar);
+        btnUltimo = new JButton("Último");
+        contentPane.add(btnUltimo);
 
         btnAnterior = new JButton("Anterior");
         contentPane.add(btnAnterior);
@@ -68,7 +67,6 @@ public class FrmPrincipal extends JFrame {
         ctrlFramePrincipal = new CtrlFramePrincipal(this, ctrlEmpleado);
 
         setVisible(true);
-        setAltaVisible(false);
         setListeners();
     }
 
@@ -83,17 +81,11 @@ public class FrmPrincipal extends JFrame {
             ctrlFramePrincipal.mostrarEmpleadoActual();
         });
 
-        btnAlta.addActionListener(e -> {
-            ctrlFramePrincipal.agregarNuevoEmpleado();
+        btnPrimero.addActionListener(e ->{
+            ctrlFramePrincipal.mostrarPrimerEmpleado();
         });
-
-        btnCancelar.addActionListener(e -> ctrlFramePrincipal.mostrarEmpleadoActual());
-    }
-
-    public void setAltaVisible(boolean isVisible) {
-        btnAlta.setVisible(isVisible);
-        btnAlta.setEnabled(isVisible);
-        btnCancelar.setVisible(isVisible);
-        btnCancelar.setEnabled(isVisible);
-    }
+        btnUltimo.addActionListener(e -> {
+            ctrlFramePrincipal.mostrarUltimoEmpleado();
+        });
+   }
 }
