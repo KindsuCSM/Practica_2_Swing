@@ -42,20 +42,11 @@ public class CtrlPanelVer {
     }
 
     public void mostrarEmpleadoActual() {
-        if (ctrlEmpleado.esUltimoEmpleado()) {
-            setEmpleadoData("", "", 0);
-        } else {
-            Empleado empleado = ctrlEmpleado.getEmpleadoActual();
-            setEmpleadoData(empleado.getNombre(), empleado.getFechaNacimiento(), empleado.getSalario());
-        }
+        Empleado empleado = ctrlEmpleado.getEmpleadoActual();
+        setEmpleadoData(empleado.getNombre(), empleado.getFechaNacimiento(), empleado.getSalario());
 
         panelVer.btnAnterior.setEnabled(!ctrlEmpleado.esPrimerEmpleado());
         panelVer.btnSiguiente.setEnabled(!ctrlEmpleado.esUltimoEmpleado());
     }
 
-    public void agregarNuevoEmpleado() {
-        Empleado nuevoEmpleado = recogerEmpleado();
-        ctrlEmpleado.agregarEmpleado(nuevoEmpleado);
-        mostrarEmpleadoActual();
-    }
 }
