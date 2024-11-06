@@ -3,6 +3,7 @@ package view;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.*;
 
 public class FrmPrincipal extends JFrame {
 
@@ -19,7 +20,7 @@ public class FrmPrincipal extends JFrame {
         setBounds(100, 100, 450, 300);
         setLocationRelativeTo(null);
 
-        contentPane = new JPanel();
+        contentPane = new JPanel(new BorderLayout()); //Añadirle borderLayout al panel que tiene el frameprincipal
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
 
