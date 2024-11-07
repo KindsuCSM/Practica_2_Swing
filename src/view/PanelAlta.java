@@ -11,7 +11,7 @@ public class PanelAlta extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JLabel lblNombre, lblFecha, lblSalario, lblDni, lblSalarioMax;
-	public JTextField txtNombre, txtFecha, txtSalario, txtDni, txtSalarioMax;
+	public static JTextField txtNombre, txtFecha, txtSalario, txtDni, txtSalarioMax;
 	public JButton btnGuardar, btnCancelar;
 
 
@@ -59,7 +59,7 @@ public class PanelAlta extends JPanel {
 		txtSalario.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		add(txtSalario);
 
-		lblSalarioMax = new JLabel("Salario máximo");
+		lblSalarioMax = new JLabel("Salario máximo:");
 		lblSalarioMax.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		add(lblSalarioMax);
 
@@ -86,8 +86,11 @@ public class PanelAlta extends JPanel {
 	private void addListeners() {
 
 		btnGuardar.addActionListener(e -> {
+
+
+
 			ctrlPanAlta.guardarEmpleado(txtNombre.getText(), txtDni.getText(), txtFecha.getText(),
-					Double.parseDouble(txtSalario.getText()), Double.parseDouble(txtSalarioMax.getText()));
+					txtSalario.getText(), txtSalarioMax.getText());
 			borrarDatos();
 		});
 
@@ -95,6 +98,8 @@ public class PanelAlta extends JPanel {
 			borrarDatos();
 		});
 	}
+
+
 
 	private void borrarDatos(){
 		txtNombre.setText("");
