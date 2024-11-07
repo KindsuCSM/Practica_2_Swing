@@ -17,7 +17,7 @@ public class FrmPrincipal extends JFrame {
     public FrmPrincipal() {
         setTitle("Aplicación empleados");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
+        setBounds(100, 100, 500, 400);
         setLocationRelativeTo(null);
 
         contentPane = new JPanel(new BorderLayout()); //Añadirle borderLayout al panel que tiene el frameprincipal
