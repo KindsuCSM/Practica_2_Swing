@@ -24,6 +24,7 @@ public class PanelVer extends JPanel {
 		setLayout(new GridLayout(0, 2, 10, 10));
 		addComponents();
 		addListeners();
+        disableText();
 	}
 
 	public void addComponents() {
@@ -33,7 +34,7 @@ public class PanelVer extends JPanel {
 
 		txtId = new JTextField();
 		add(txtId);
-		txtId.setColumns(10);
+
 		lblNombre = new JLabel("Nombre:");
         add(lblNombre);
 
@@ -58,7 +59,7 @@ public class PanelVer extends JPanel {
         txtSalario = new JTextField();
         add(txtSalario);
 
-        lblSalarioMax = new JLabel("Salario máximo");
+        lblSalarioMax = new JLabel("Salario máximo:");
         add(lblSalarioMax);
 
         txtSalarioMax = new JTextField();
@@ -98,5 +99,13 @@ public class PanelVer extends JPanel {
         	ctrlPanVer.mostrarUltimoEmpleado();
         });
 	}
+    private void disableText(){
+        txtId.setEditable(false);
+        txtNombre.setEditable(false);
+        txtDni.setEditable(false);
+        txtFecha.setEditable(false);
+        txtSalario.setEditable(false);
+        txtSalarioMax.setEditable(false);
+    }
 
 }
