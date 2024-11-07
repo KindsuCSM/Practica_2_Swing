@@ -57,10 +57,13 @@ public class MenuBarPrincipal implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == itemVer) {
             cambiarPanel(panVer);
+            frmPrincipal.setTitle("Ver empleados");
         } else if (e.getSource() == itemAlta) {
             cambiarPanel(panAlta);
+            frmPrincipal.setTitle("Dar alta");
         } else if (e.getSource() == itemAcercaDe) {
             cambiarPanel(panAcercaDe);
+            frmPrincipal.setTitle("Acerca de...");
         }
     }
 }
