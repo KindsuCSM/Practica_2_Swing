@@ -13,56 +13,70 @@ import controller.CtrlPanelVer;
 public class PanelVer extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-    private JPanel contentPane;
-    private JLabel lblNombre, lblFecha, lblSalario;
-    public JTextField txtNombre, txtFecha, txtSalario;
+    private JLabel lblNombre, lblFecha, lblSalario, lblDni, lblSalarioMax, lblID;
+    public JTextField txtNombre, txtFecha, txtSalario, txtDni, txtSalarioMax, txtId;
     public JButton btnAnterior, btnSiguiente,  btnPrimero, btnUltimo;
 
     private CtrlPanelVer ctrlPanVer;
     private CtrlEmpleado ctrlEmpleado;
 
 	public PanelVer() {
-		contentPane = new JPanel(new GridLayout(0, 2, 16, 16));
-
+		setLayout(new GridLayout(0, 2, 10, 10));
 		addComponents();
-		add(contentPane);
 		addListeners();
 	}
 
 	public void addComponents() {
+
+		lblID = new JLabel("ID:");
+		add(lblID);
+
+		txtId = new JTextField();
+		add(txtId);
+		txtId.setColumns(10);
 		lblNombre = new JLabel("Nombre:");
-        contentPane.add(lblNombre);
+        add(lblNombre);
 
         txtNombre = new JTextField();
-        contentPane.add(txtNombre);
-        txtNombre.setColumns(10);
+        add(txtNombre);
 
-        lblFecha = new JLabel("Fecha de nacimiento:");
-        contentPane.add(lblFecha);
+        lblDni = new JLabel("DNI:");
+        add(lblDni);
+
+        txtDni = new JTextField();
+        add(txtDni);
+
+        lblFecha = new JLabel("Fecha de nacimiento (dd-mm-aaaa):");
+        add(lblFecha);
 
         txtFecha = new JTextField();
-        contentPane.add(txtFecha);
-        txtFecha.setColumns(10);
+        add(txtFecha);
 
         lblSalario = new JLabel("Salario:");
-        contentPane.add(lblSalario);
+        add(lblSalario);
 
         txtSalario = new JTextField();
-        contentPane.add(txtSalario);
-        txtSalario.setColumns(10);
+        add(txtSalario);
+
+        lblSalarioMax = new JLabel("Salario máximo");
+        add(lblSalarioMax);
+
+        txtSalarioMax = new JTextField();
+        add(txtSalarioMax);
 
         btnPrimero = new JButton("Primero");
-        contentPane.add(btnPrimero);
+        add(btnPrimero);
 
         btnUltimo = new JButton("Último");
-        contentPane.add(btnUltimo);
+        add(btnUltimo);
 
         btnAnterior = new JButton("Anterior");
-        contentPane.add(btnAnterior);
+        add(btnAnterior);
 
         btnSiguiente = new JButton("Siguiente");
-        contentPane.add(btnSiguiente);
+        add(btnSiguiente);
 
+        //Inicializar controladores
         ctrlEmpleado = new CtrlEmpleado();
         ctrlPanVer = new CtrlPanelVer(this, ctrlEmpleado);
 	}
