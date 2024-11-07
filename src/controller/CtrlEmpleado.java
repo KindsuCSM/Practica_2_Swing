@@ -55,14 +55,4 @@ public class CtrlEmpleado {
     public boolean esPrimerEmpleado() {
         return indiceActual == 0;
     }
-
-    public void agregarEmpleado(Empleado empleado) {
-        empleados.add(empleado);
-        indiceActual = empleados.size() - 1;
-    }
-
-    public boolean hayCampoNuevo() {
-        return indiceActual == empleados.size();
-    }
-
 }

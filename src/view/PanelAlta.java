@@ -14,19 +14,15 @@ public class PanelAlta extends JPanel {
 	public static JTextField txtNombre, txtFecha, txtSalario, txtDni, txtSalarioMax;
 	public JButton btnGuardar, btnCancelar;
 
-
 	private CtrlPanelAlta ctrlPanAlta;
 
-
 	public PanelAlta() {
-
 		setLayout(new GridLayout(0, 2, 10, 10));
 		addComponents();
 		addListeners();
 	}
 
 	private void addComponents() {
-
 		lblNombre = new JLabel("Nombre:");
 		lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		add(lblNombre);
@@ -75,20 +71,11 @@ public class PanelAlta extends JPanel {
 		btnCancelar.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		add(btnCancelar);
 
-
-
-
-
 		ctrlPanAlta = new CtrlPanelAlta();
 
 	}
-
 	private void addListeners() {
-
 		btnGuardar.addActionListener(e -> {
-
-
-
 			ctrlPanAlta.guardarEmpleado(txtNombre.getText(), txtDni.getText(), txtFecha.getText(),
 					txtSalario.getText(), txtSalarioMax.getText());
 			borrarDatos();
@@ -98,9 +85,6 @@ public class PanelAlta extends JPanel {
 			borrarDatos();
 		});
 	}
-
-
-
 	private void borrarDatos(){
 		txtNombre.setText("");
 		txtDni.setText("");
@@ -108,5 +92,4 @@ public class PanelAlta extends JPanel {
 		txtSalario.setText("");
 		txtSalarioMax.setText("");
 	}
-
 }

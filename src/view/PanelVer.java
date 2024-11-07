@@ -26,7 +26,6 @@ public class PanelVer extends JPanel {
 		addListeners();
         disableText();
 	}
-
 	public void addComponents() {
 
 		lblID = new JLabel("ID:");
@@ -86,12 +85,10 @@ public class PanelVer extends JPanel {
             ctrlEmpleado.anteriorEmpleado();
             ctrlPanVer.mostrarEmpleadoActual();
         });
-
         btnSiguiente.addActionListener(e -> {
             ctrlEmpleado.siguienteEmpleado();
             ctrlPanVer.mostrarEmpleadoActual();
         });
-
         btnPrimero.addActionListener(e ->{
         	ctrlPanVer.mostrarPrimerEmpleado();
         });
