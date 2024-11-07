@@ -43,7 +43,7 @@ public class PanelAlta extends JPanel {
 		txtDni.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		add(txtDni);
 
-		lblFecha = new JLabel("Fecha de nacimiento (dd-mm-aaaa):");
+		lblFecha = new JLabel("<html><p>Fecha de nacimiento (dd-mm-aaaa):</html></p>");
 		lblFecha.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		add(lblFecha);
 
