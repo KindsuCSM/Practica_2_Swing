@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
 import model.Empleado;
 
 public class CtrlEmpleado {
-    private ArrayList<Empleado> empleados;
+    public static ArrayList<Empleado> empleados;
     private int indiceActual;
 
     public CtrlEmpleado() {
